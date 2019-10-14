@@ -7,11 +7,11 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/d3Style.css">
-
+  <script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
 </head>
 
 <body>
-  <div class="container">
+<div class="container">
     <div class="row">
       <div class="col-xs-12 col-md-12">
         <h1>D3Times</h1>
@@ -21,6 +21,14 @@
       <div class="col-xs-12  col-md-9">
         <div id="scatter">
           <!-- We append our chart here. -->
+          <script>
+          d3.csv("/data/data.csv", function(data) {
+            for (var i = 0; i < data.length; i++) {
+              console.log(data[i].income);
+              console.log(data[i].obesity);
+            }
+          });
+          </script>
         </div>
       </div>
     </div>
